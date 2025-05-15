@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ColorType {
+  c_hex: String!
+  c_name: String!
+  c_rgb: String!
+  id: ID!
+}
+
+input CreateColorInput {
+  c_hex: String!
+  c_name: String!
+  c_rgb: String!
+}
+
+type Mutation {
+  createColor(input: CreateColorInput!): ColorType!
+  deleteColor(id: String!): String!
+  updateColor(input: UpdateColorInput!): ColorType!
+}
+
+type Query {
+  colorByName(name: String): ColorType!
+  colorsAll: [ColorType!]!
+  colorsPaginated(limit: Float, page: Float!): [ColorType!]!
+}
+
+input UpdateColorInput {
+  c_hex: String
+  c_name: String
+  c_rgb: String
+  id: String!
+}
