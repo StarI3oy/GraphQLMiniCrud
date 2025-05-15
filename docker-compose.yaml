@@ -14,6 +14,13 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-
+  app:
+    image: mrpatterson/nest-pnpm-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deploy
+    ports:
+      - 3000:3000
 volumes:
   postgres-db-volume:
